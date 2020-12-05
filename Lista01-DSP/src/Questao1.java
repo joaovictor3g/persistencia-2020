@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
-
+import javax.swing.JOptionPane;
 
 public class Questao1 {
 	public static void main(String[] args) throws IOException {
@@ -19,7 +19,7 @@ public class Questao1 {
 		try {
 			FileInputStream file = new FileInputStream(fileName); // Abre arquivo já existentes
 			InputStreamReader input = new InputStreamReader(file); // Decodifica os bytes usando UTF-8, padrão
-	        BufferedReader br = new BufferedReader(input); // Lê os dados linha a linha
+	        BufferedReader br = new BufferedReader(input); // Lê os dados linha a linha que já foram codificados
 	        
 	        String linha = "";
 	        
