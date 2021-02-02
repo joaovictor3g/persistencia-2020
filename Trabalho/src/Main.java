@@ -53,14 +53,13 @@ public class Main {
 		
 		//Questão 03
 		ConvertToJSONAndXML convert = new ConvertToJSONAndXML();
-		System.out.println("Digite o nome do arquivo a ser convertido para JSON e XML");
+		System.out.println("Digite o nome do arquivo existente a ser convertido para JSON e XML e compactado no formato ZIP");
 		String fileNameToConvert = input.next();
 		convert.ConvertToJSON(fileNameToConvert);
 		convert.convertToXML(fileNameToConvert);
 		
 		// Questão 04
 		Compact compact = new Compact();
-		
-		compact.compactFile("saveData.csv");
+		compact.compactFile(fileNameToConvert);
 	}
 }
