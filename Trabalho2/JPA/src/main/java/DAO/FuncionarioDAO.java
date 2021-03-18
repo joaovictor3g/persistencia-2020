@@ -5,22 +5,20 @@ import Model.Funcionario;
 import java.util.List;
 
 public interface FuncionarioDAO {
-
     public boolean verificaMatriculaExiste(String matricula);
 
     public boolean verificaCpfExiste(String matricula);
 
     void adicionar(Funcionario funcionario);
 
-    List<Funcionario> getAllEmployees();
+    List<Funcionario> getAllEmployeesCriteria();
 
-//    void deletar(int id);
-//
-//    void alterar(Funcionario funcionario, int id);
-//
-//    Funcionario consultar(int id);
-//
-//    void adicionaListaFuncionarios(List<Funcionario> funcionarioList);
-//
-//    List<Funcionario> listaPaginada(int pagina, int tamanhoPagina);
+    List<Funcionario> getAllEmployeesJPQL();
+
+    List<Funcionario> getAllEmployeesNamedQuery();
+
+    void getAllEmployeesNativeQuery();
+
+    void createTransaction();
+
 }

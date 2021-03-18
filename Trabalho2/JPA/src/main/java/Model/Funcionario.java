@@ -3,17 +3,24 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name="Funcionario.getAllEmployees", query="SELECT f FROM Funcionario f")
+})
 @Table(name="funcionario")
 public class Funcionario {
     @Id
     @Column(name="id_funcionario")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
-
+    @Column(nullable = false)
     private String cpf;
+    @Column(nullable = false)
     private String matricula;
+    @Column(nullable = false)
     private String nome;
+    @Column(nullable = false)
     private String email;
+    @Column(nullable = false)
     private String telefone;
 
     public Funcionario() {}

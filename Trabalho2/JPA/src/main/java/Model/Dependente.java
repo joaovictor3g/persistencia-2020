@@ -3,6 +3,8 @@ package Model;
 import javax.persistence.*;
 
 @Entity
+@NamedQuery(name="Dependente.getDependancyForInitialLetter",
+        query="SELECT d FROM Dependente d WHERE d.nome LIKE :nome")
 @Table(name="dependente")
 public class Dependente {
     @Id
@@ -15,6 +17,16 @@ public class Dependente {
 
     @ManyToOne
     private Funcionario funcionario;
+
+    public Dependente(String cpf, String nome, Funcionario funcionario) {
+        this.cpf = cpf;
+        this.nome = nome;
+        this.funcionario = funcionario;
+    }
+
+    public Dependente() {
+        super();
+    }
 
     public String getCpf() {
         return cpf;
